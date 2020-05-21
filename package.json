@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open",
-    "transpile": "babel src -d dist --copy-files",
-    "prepublishOnly": "npm run transpile"
+    "build": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "Craig Margieson",
