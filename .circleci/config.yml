@@ -21,6 +21,8 @@ workflows:
       - node/test
 
       - publish:
+          requires:
+            - node/test
           filters:
             tags:
               only: /v[0-9]+(\.[0-9]+)*/
