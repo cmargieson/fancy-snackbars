@@ -1,26 +1,31 @@
-version: 2.1
-
-orbs:
-  node: circleci/node@3.0.1
+version: 2
 
 jobs:
-  publish:
+  test:
     docker:
       - image: circleci/node
     steps:
       - checkout
-      - run: echo "hello world"
+      - run: echo "hello from test"
+
+  deploy:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: echo "hello from deploy"
 
 workflows:
-  build-and-publish:
+  version: 2
+  test-deploy:
     jobs:
-      - node/test:
+      - test:
           filters:
             tags:
               only: /^v.*/
-      - publish:
+      - deploy:
           requires:
-            - node/test
+            - test
           filters:
             tags:
               only: /^v.*/
