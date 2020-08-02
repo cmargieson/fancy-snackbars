@@ -12,7 +12,10 @@
   "keywords": [],
   "author": "Craig Margieson",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1"
+  },
   "peerDependencies": {
     "@material-ui/core": "^4.9.14",
     "@material-ui/icons": "^4.9.1",
