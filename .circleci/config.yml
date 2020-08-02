@@ -1,4 +1,6 @@
 version: 2.1
+# npm version [<newversion> | major | minor | patch]
+# git push --tags
 
 orbs:
   node: circleci/node@3.0.1
@@ -9,10 +11,25 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: echo "hello world"
+      - run:
+          name: Publish to NPM
+          command: |
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
 
 workflows:
-  build-and-publish:
+  test-and-publish:
     jobs:
-      - node/test
-      - publish
+      - node/test:
+          filters:
+            tags:
+              only: /.*/
+
+      - publish:
+          requires:
+            - node/test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
