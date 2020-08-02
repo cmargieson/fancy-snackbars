@@ -19,6 +19,9 @@ workflows:
   build-and-deploy:
     jobs:
       - node/test
+          filters:
+            tags:
+              only: /.*/
 
       # Only deploy to NPM on version change
       # Use "npm version <semver>" to add git tag
@@ -27,5 +30,7 @@ workflows:
           requires:
             - node/test
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v.*/
