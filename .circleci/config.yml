@@ -14,7 +14,7 @@ jobs:
 workflows:
   build-and-publish:
     jobs:
-      - node/test
+      - node/test:
           filters:
             tags:
               only: /^v[0-9]+(\.[0-9]+)*$/ # Important
