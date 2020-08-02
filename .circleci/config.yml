@@ -26,8 +26,8 @@ workflows:
       - publish:
           requires:
             - node/test
-            filters:
-              tags:
-                only: /^v.*/
-              branches:
-                ignore: /.*/
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
