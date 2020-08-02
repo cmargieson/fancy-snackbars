@@ -2,22 +2,23 @@ version: 2
 
 jobs:
   test:
-    docker:
-      - image: circleci/node
+    docker: 
+      - image: circleci/node # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run: echo "hello from test"
+      - checkout # check out the code in the project directory
+      - run: echo "hello test" # run the `echo` command
 
   deploy:
-    docker:
-      - image: circleci/node
+    docker: 
+      - image: circleci/node # the primary container, where your job's commands are run
     steps:
-      - checkout
-      - run: echo "hello from deploy"
+      - checkout # check out the code in the project directory
+      - run: echo "hello test" # run the `echo` command
+    
 
 workflows:
   version: 2
-  test-deploy:
+  test-and-deploy:
     jobs:
       - test:
           filters:
@@ -28,6 +29,6 @@ workflows:
             - test
           filters:
             tags:
-              only: /.*/
+              only: /^v.*/
             branches:
               ignore: /.*/
