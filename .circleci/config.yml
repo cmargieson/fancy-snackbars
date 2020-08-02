@@ -1,17 +1,22 @@
 version: 2.1
-# 
+# npm version [<newversion> | major | minor | patch]
+# git push --tags
 
 orbs:
   node: circleci/node@3.0.1
 
 jobs:
   publish:
-    docker: 
-      - image: circleci/node 
+    docker:
+      - image: circleci/node
     steps:
-      - checkout 
-      - run: echo "hello deploy" 
-    
+      - checkout
+      - run:
+          name: Publish to NPM
+          command: |
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
+
 workflows:
   test-and-publish:
     jobs:
