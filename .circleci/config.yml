@@ -15,7 +15,7 @@ workflows:
   build-and-publish:
     jobs:
       - node/test
-      - publish
+      - publish:
           filters:
             branches:
               ignore: /.*/
