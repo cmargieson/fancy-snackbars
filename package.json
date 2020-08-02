@@ -1,13 +1,13 @@
 {
   "name": "fancy-snackbars",
-  "version": "1.7.1",
+  "version": "1.9.7",
   "description": "Manage a queue of customised Material-UI snackbars.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Warning: no test specified\" && exit 0",
     "start": "webpack-dev-server --mode development --open",
     "build": "babel src -d dist --copy-files",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm install && npm run build"
   },
   "keywords": [],
   "author": "Craig Margieson",

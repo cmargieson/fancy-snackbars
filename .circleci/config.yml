@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@3.0.1
+
+jobs:
+  publish:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: echo "hello world"
+
+workflows:
+  build-and-publish:
+    jobs:
+      - node/test
+      - publish
