@@ -12,7 +12,7 @@ jobs:
     docker: 
       - image: circleci/node # the primary container, where your job's commands are run
     steps:
-      - checkout # check out the code in the project directory
+      - checkout 
       - run: echo "hello deploy" # run the `echo` command
     
 
