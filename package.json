@@ -1,6 +1,6 @@
 {
   "name": "fancy-snackbars",
-  "version": "1.7.4",
+  "version": "1.8.0",
   "description": "Manage a queue of customised Material-UI snackbars.",
   "main": "dist/index.js",
   "scripts": {
