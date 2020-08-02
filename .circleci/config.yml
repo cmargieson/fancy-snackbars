@@ -4,6 +4,18 @@ orbs:
   node: circleci/node@3.0.1
 
 jobs:
+
+  test:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: 
+          name: Run NPM tests
+          command: |
+            npm install
+            npm run test
+
   publish:
     docker:
       - image: circleci/node
@@ -18,13 +30,10 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      - node/test
+      - test
           filters:
             tags:
               only: /.*/
-
-      # Only deploy to NPM on version change
-      # Use "npm version <semver>" to add git tag
 
       - publish:
           requires:
