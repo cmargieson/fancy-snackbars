@@ -13,7 +13,7 @@ jobs:
       - image: circleci/node # the primary container, where your job's commands are run
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello test" # run the `echo` command
+      - run: echo "hello deploy" # run the `echo` command
     
 
 workflows:
