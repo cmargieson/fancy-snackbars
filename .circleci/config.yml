@@ -1,23 +1,22 @@
-version: 2
+version: 2.1
 
 jobs:
   test:
     docker: 
-      - image: circleci/node # the primary container, where your job's commands are run
+      - image: circleci/node 
     steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello test" # run the `echo` command
+      - checkout 
+      - run: echo "hello test" 
 
   deploy:
     docker: 
-      - image: circleci/node # the primary container, where your job's commands are run
+      - image: circleci/node 
     steps:
       - checkout 
-      - run: echo "hello deploy" # run the `echo` command
+      - run: echo "hello deploy" 
     
 
 workflows:
-  version: 2
   test-and-deploy:
     jobs:
       - test:
