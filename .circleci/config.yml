@@ -1,18 +1,6 @@
 version: 2
 
 jobs:
-
-  test:
-    docker:
-      - image: circleci/node
-    steps:
-      - checkout
-      - run: 
-          name: Run NPM tests
-          command: |
-            npm install
-            npm run test
-
   publish:
     docker:
       - image: circleci/node
@@ -25,15 +13,10 @@ jobs:
             npm publish
 
 workflows:
-  build-and-deploy:
+  version: 2
+  tagged-build:
     jobs:
-      - test
-
       - publish:
-          requires:
-            - node/test
           filters:
-            branches:
-              ignore: /.*/
             tags:
-              only: /^v.*/
+              only: /v[0-9]+(\.[0-9]+)*/
