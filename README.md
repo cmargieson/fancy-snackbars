@@ -2,7 +2,7 @@
 
 ### How to use
 
-**1:** Wrap your app inside a `SnackbarProvider` component.
+**1.** Wrap your app inside a `SnackbarProvider` component.
 
 ```jsx
 import { FancySnackbarProvider } from "fancy-snackbars";
@@ -12,7 +12,7 @@ import { FancySnackbarProvider } from "fancy-snackbars";
 </FancySnackbarProvider>;
 ```
 
-**2:** Use `useFancySnackbar` hook in your functional components.
+**2.** Use `useFancySnackbar` hook in your functional components.
 
 ```javascript
 import  { useFancySnackbar } from "fancy-snackbars";
