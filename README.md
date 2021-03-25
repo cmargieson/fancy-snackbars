@@ -1,6 +1,6 @@
 # Fancy Snackbars
 
-**Fancy Snackbars** is a library to manage a queue of Material-UI Snackbar notifications. Multiple notifications are queued and shown one after another.
+**Fancy Snackbars** manages a queue of Material-UI Snackbar notifications. Multiple notifications are queued and shown one after another.
 
 ## How to Use
 
