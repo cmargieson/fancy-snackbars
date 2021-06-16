@@ -45,19 +45,3 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## Deploying to NPM with CircleCI
-
-**1.** Update package.json version to increment npm version.
-
-**2.** 
-```console
-npm install
-``` 
-
-**3.** Push to GitHub with version number as tag with v affixed. For example:
-
-```console
-git tag v1.9.20
-git push origin v1.9.20
-```
